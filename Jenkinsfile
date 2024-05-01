@@ -5,8 +5,8 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t vikashashoke/productcatalogservice:latest ."
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
+                        sh "docker build -t shittuay/productcatalogservice:latest ."
                     }
                 }
             }
@@ -15,8 +15,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push vikashashoke/productcatalogservice:latest "
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
+                        sh "docker push shittuay/productcatalogservice:latest "
                     }
                 }
             }
