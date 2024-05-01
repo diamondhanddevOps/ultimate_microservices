@@ -7,8 +7,8 @@ pipeline {
                 script {
                     dir('src') {
 
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker build -t vikashashoke/cartservice:latest ."
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
+                        sh "docker build -t shittuay/cartservice:latest ."
                     }
                         }
                 }
@@ -18,8 +18,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
-                        sh "docker push vikashashoke/cartservice:latest "
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
+                        sh "docker push shittuay/cartservice:latest "
                     }
                 }
             }
