@@ -7,7 +7,7 @@ pipeline {
         stage('Build & Tag Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
                         sh "docker build -t shittuay/adservice:latest ."
                     }
                 }
