@@ -17,7 +17,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
                         sh "docker push shittuay/adservice:latest "
                     }
                 }
